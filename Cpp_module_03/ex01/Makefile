@@ -1,10 +1,10 @@
 # Variables
 NAME = scavtrap
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Source files
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = Main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # Rules
