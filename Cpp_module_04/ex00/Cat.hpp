@@ -10,7 +10,7 @@ public:
     Cat(const Cat& other);
     Cat& operator=(const Cat& other);
 
-    void makeSound() const override; // Override the base class function
+    void makeSound() const ; // Override the base class function
 };
 
 #endif

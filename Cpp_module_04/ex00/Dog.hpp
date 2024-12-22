@@ -10,7 +10,7 @@ public:
     Dog(const Dog& other);
     Dog& operator=(const Dog& other);
 
-    void makeSound() const override; // Override the base class function
+    void makeSound() const ; // Override the base class function
 };
 
 #endif
