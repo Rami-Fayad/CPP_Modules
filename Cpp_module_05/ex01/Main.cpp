@@ -4,7 +4,7 @@
 int main() {
     try {
         Bureaucrat john("John", 2);
-        Form taxForm("Tax Form", 3, 5);
+        Form taxForm("Tax Form", 5, 5);
 
         std::cout << john << std::endl;
         std::cout << taxForm << std::endl;
@@ -12,7 +12,7 @@ int main() {
         john.signForm(taxForm);
         std::cout << taxForm << std::endl;
 
-        Bureaucrat jane("Jane", 150);
+        Bureaucrat jane("Jane", 5);
         jane.signForm(taxForm);
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
