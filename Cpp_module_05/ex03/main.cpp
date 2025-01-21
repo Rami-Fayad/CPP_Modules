@@ -14,11 +14,11 @@ int main()
     f = intern.makeForm("robotomy request", "28B");
     std::cout << *f << std::endl;
     std::cout << std::endl;
-        delete f;
+    delete f;
     f = intern.makeForm("presidential pardon", "28A");
     std::cout << *f << std::endl;
     std::cout << std::endl;
-        delete f;
+    delete f;
 
     f = intern.makeForm("undefined", "0U");
     delete f;

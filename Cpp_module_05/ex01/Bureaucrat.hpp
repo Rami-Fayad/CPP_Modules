@@ -7,41 +7,42 @@
 #include "Form.hpp"
 
 class Form;
-class Bureaucrat {
+
+class Bureaucrat
+{
 private:
-    const std::string name; // Constant name
-    int grade;              // Grade ranges from 1 to 150
+    static const int maxGrade = 1;
+    static const int minGrade = 150;
+    const std::string name;
+    int grade;
+
+    Bureaucrat(void);
 
 public:
-    // Exception classes
-    class GradeTooHighException : public std::exception {
+    Bureaucrat(const std::string &name, int grade);
+    Bureaucrat(const Bureaucrat &other);
+    ~Bureaucrat(void);
+
+    Bureaucrat &operator=(const Bureaucrat &other);
+    const std::string &getName(void) const;
+    int getGrade(void) const;
+    void incrementGrade(void);
+    void decrementGrade(void);
+    void signForm(Form &form);
+
+private:
+    class GradeTooHighException : public std::exception
+    {
     public:
-        virtual const char* what() const throw();
+        const char *what() const throw();
     };
-
-    class GradeTooLowException : public std::exception {
+    class GradeTooLowException : public std::exception
+    {
     public:
-        virtual const char* what() const throw();
+        const char *what() const throw();
     };
-
-    // Constructor and destructor
-    Bureaucrat(const std::string& name, int grade);
-    ~Bureaucrat();
-
-    // Getters
-    std::string getName() const;
-    int getGrade() const;
-
-    // Member functions
-    void incrementGrade();
-    void decrementGrade();
-    void signForm(Form& form) const;
-
-    // Print function
-    void print(std::ostream& os) const;
 };
 
-// Overloaded << operator
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
+std::ostream &operator<<(std::ostream &out, Bureaucrat &b);
 
 #endif
