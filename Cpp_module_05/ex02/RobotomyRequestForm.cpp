@@ -1,20 +1,32 @@
+
 #include "RobotomyRequestForm.hpp"
-#include <iostream>
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
-    : AForm("RobotomyRequestForm", 72, 45), target(target) {}
+RobotomyRequestForm::RobotomyRequestForm(void) 
+        : Form("RobotomyrequestForm", 72, 45), target("") {}
 
-RobotomyRequestForm::~RobotomyRequestForm() {}
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) 
+        : Form("RobotomyrequestForm", 72, 45), target(target) {}
 
-void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
-    if (!isSigned())
-        throw FormNotSignedException();
-    if (executor.getGrade() > getExecGrade())
-        throw GradeTooLowException();
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) 
+        : Form("RobotomyrequestForm", 72, 45), target(other.getTarget()) {}
 
-    std::cout << "Drilling noises... ";
-    if (rand() % 2)
-        std::cout << target << " has been robotomized successfully." << std::endl;
-    else
-        std::cout << "Robotomy of " << target << " failed." << std::endl;
+RobotomyRequestForm::~RobotomyRequestForm(void) {}
+
+const std::string&	RobotomyRequestForm::getTarget(void) const
+{
+	return (this->target);
+}
+
+void				RobotomyRequestForm::execute(const Bureaucrat& executor) const
+{
+	this->checkExecutability(executor);
+
+	std::cout << "* Unbearable drilling noises *" << std::endl;
+	if (rand() % 2)
+	{
+		std::cout << "The victi... " << this->target;
+		std::cout << " has been successfully robotomized!" << std::endl;
+	}
+	else
+		std::cout << "The robotomization on " << this->target << " failed!" << std::endl;
 }

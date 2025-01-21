@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -46,5 +46,4 @@ private:
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat &b);
-
 #endif
