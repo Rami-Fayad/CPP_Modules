@@ -2,18 +2,18 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationAForm.hpp"
+#include "RobotomyRequestAForm.hpp"
+#include "PresidentialPardonAForm.hpp"
 
 class Intern
 {
 private:
-    typedef struct s_form
+    typedef struct s_AForm
     {
         std::string type;
-        Form *form;
-    } t_form;
+        AForm *form;
+    } t_AForm;
 
 public:
     Intern(void);
@@ -21,7 +21,7 @@ public:
     ~Intern(void);
 
     Intern &operator=(const Intern &other);
-    Form *makeForm(const std::string &formName, const std::string &target) const;
+    AForm *makeAForm(const std::string &AFormName, const std::string &target) const;
 };
 
 #endif

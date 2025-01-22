@@ -1,9 +1,9 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationAForm.cpp RobotomyRequestAForm.cpp PresidentialPardonAForm.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = formExecutor
+NAME = AFormExecutor
 
 all: $(NAME)
 
