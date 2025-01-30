@@ -28,6 +28,20 @@ int main() {
         ++it;
     }
 
+     std::list<int> lst;
+lst.push_back(5);
+lst.push_back(17);
+lst.pop_back();
+lst.push_back(3);
+lst.push_back(5);
+lst.push_back(737);
+lst.push_back(0);
+
+std::cout << "List contents using iterators:" << std::endl;
+for (std::list<int>::iterator it = lst.begin(); it != lst.end(); ++it) {
+    std::cout << *it << std::endl;
+}
+
     std::stack<int> s(mstack);  // Copying to standard stack
     return 0;
 }
