@@ -1,6 +1,19 @@
 #include "RPN.hpp"
-
 RPN::RPN() {}
+
+// Copy constructor
+RPN::RPN(const RPN &other) {
+    this->stack = other.stack;  
+}
+
+RPN &RPN::operator=(const RPN &rhs) {
+    if (this != &rhs) {
+        this->stack = rhs.stack;  // Copy stack
+    }
+    return *this;
+}
+
+// Destructor
 RPN::~RPN() {}
 
 // This function processes the given RPN expression
@@ -17,12 +30,12 @@ void RPN::processExpression(const std::string &expression) {
             }
             performOperation(token[0]);
         } else {
-            // Try converting token to an integer
-            int number = atoi(token.c_str());  // Using atoi here
-            if (number < 10) {
+            // Validate the token as a single-digit number
+            if (token.size() == 1 && std::isdigit(token[0])) {
+                int number = token[0] - '0';  // Convert char to int
                 stack.push(number);
             } else {
-                std::cerr << "Error: Numbers must be less than 10\n";
+                std::cerr << "Error: Invalid token or number too large\n";
                 return;
             }
         }
