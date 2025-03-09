@@ -6,8 +6,8 @@
 #include <sstream>
 #include <map>
 #include <string>
-#include <cstdlib>   // for std::strtod (string to double conversion).
-#include <stdexcept>
+#include <cstdlib>   // for std::strtod (string to double conversion)
+#include <stdexcept> // for exception handling
 
 class BitcoinExchange {
 private:
@@ -19,6 +19,10 @@ public:
 
     void loadDatabase(const std::string &filename);
     void processInputFile(const std::string &filename) const;
+
+    bool isValidDate(const std::string &date) const;
+    bool isValidValue(const std::string &value) const;
+    double getExchangeRate(const std::string &date) const;
 };
 
 #endif
