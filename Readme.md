@@ -85,7 +85,7 @@ Example:
 
 **Rami Al Fayad**  
 [GitHub Profile](https://github.com/Rami-Fayad)  
-[LinkedIn Profile](www.linkedin.com/in/rami-fayad-12a04926b)  
+[LinkedIn Profile](https://www.linkedin.com/in/rami-fayad-12a04926b)  
 
 Feel free to reach out for collaborations, questions, or just to connect!
 
